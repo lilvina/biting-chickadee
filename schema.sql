@@ -47,7 +47,7 @@ DROP TABLE IF EXISTS order;
 CREATE TABLE order (
   id SERIAL PRIMARY KEY,
   customer_id FOREIGN KEY,
-  completed VARCHAR 255,
+  completed BOOLEAN,
   payment_method VARCHAR 255,
   date_time TIMESTAMP,
   total DECIMAL
@@ -60,9 +60,10 @@ CREATE TABLE delivery (
   status VARCHAR 255,
   delivery_address FOREIGN KEY,
   delivery_person VARCHAR 255,
+  -- consider delivery_person
   order_id FOREIGN KEY,
-  price INTEGER,
-  tip INTEGER
+  price DECIMAL,
+  tip DECIMAL
 );
 
 
