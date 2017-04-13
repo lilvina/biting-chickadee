@@ -44,27 +44,27 @@ Before diving in, it is **strongly recommended** to review the video and code fr
 
 **Product/User Stories**
 
-- [ ] Can track all **customers** and any relevant customer information, including but not limited to...
-  - [ ] customer ID
-  - [ ] name
-  - [ ] username/login details
-  - [ ] delivery address(es)
-  - [ ] phone number(s)
-  - [ ] payment methods on file (e.g., cash, credit, check - if credit, then the card number should also be stored)
-- [ ] Can track each customer's pizza **preferences**
-- [ ] Can track the **ingredients** that comprise each of these preferences (e.g., onions, ham, pineapple, anchovies, bacon, etc.)
-- [ ] Can track standard **drinks**, including...
-  - [ ] a product ID
-  - [ ] drink description
-  - [ ] manufacturer
-  - [ ] supplier
-  - [ ] price
-- [ ] Can track **pizza** data:
-  - [ ] sizes (small, medium, large, extra large)
-  - [ ] types (thick or thin crust)
-  - [ ] **ingredients** (pepperoni, sausage, mushrooms, onions, cheese, etc.)
-  - [ ] price data for these pizza sizes and ingredients
-  - [ ] happy hour price discounts
+- [x] Can track all **customers** and any relevant customer information, including but not limited to...
+  - [x] customer ID
+  - [x] name
+  - [x] username/login details
+  - [x] delivery address(es)
+  - [x] phone number(s)
+  - [x] payment methods on file (e.g., cash, credit, check - if credit, then the card number should also be stored)
+- [x] Can track each customer's pizza **preferences**
+- [x] Can track the **ingredients** that comprise each of these preferences (e.g., onions, ham, pineapple, anchovies, bacon, etc.)
+- [x] Can track standard **drinks**, including...
+  - [x] a product ID
+  - [x] drink description
+  - [x] manufacturer
+  - [x] supplier
+  - [x] price
+- [x] Can track **pizza** data:
+  - [x] sizes (small, medium, large, extra large)
+  - [x] types (thick or thin crust)
+  - [x] **ingredients** (pepperoni, sausage, mushrooms, onions, cheese, etc.)
+  - [x] price data for these pizza sizes and ingredients
+  - [x] happy hour price discounts
 
 **Other**
 - [ ] The artifact is a GitHub repo
