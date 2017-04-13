@@ -145,3 +145,16 @@ VALUES ( 'Beyoncé Knowles', 'bknowles', 'abacus', 1234567 ),
 --   'TX'
 -- );
 
+
+INSERT INTO customer_address ( customer_id, address_id )
+VALUES ( 4, 9 ),
+( 6, 8 ),
+( 9, 7 ),
+( 3, 6 ),
+( 1, 5 ),
+( 7, 4 ),
+( 8, 3 ),
+( 11, 2 ),
+( 5, 1 ),
+( 2, 10 ),
+( 10, 11 );
