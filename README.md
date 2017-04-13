@@ -70,7 +70,7 @@ Before diving in, it is **strongly recommended** to review the video and code fr
 - [X] The artifact is a GitHub repo
 - [ ] There are commands provided (using `npm run` and/or with executable scripts in a `bin/` directory) to:
   - [X] Create the database
-  - [ ] Drop the database
+  - [X] Drop the database
   - [ ] Insert sample/seed data to the database
   - [ ] Start the web server
 - [ ] SQL files are well formatted and readable.
