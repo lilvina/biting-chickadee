@@ -17,12 +17,15 @@ CREATE TABLE credit_card (
   id SERIAL PRIMARY KEY,
   customer_name VARCHAR ( 255 ) NULL,
   card_number INTEGER NULL,
-  billing_address_id VARCHAR NULL,
+  apartment_number VARCHAR ( 255 ),
+  street_address VARCHAR ( 255 ) NULL,
+  zipcode INTEGER,
   customer_id INTEGER REFERENCES customer ( id ),
   expiration_date TIMESTAMP NULL,
-  card_type VARCHAR ( 255 )
+  card_type VARCHAR ( 255 ),
+  city VARCHAR ( 255 ),
+  state VARCHAR ( 255 )
 );
-
 
 DROP TABLE IF EXISTS customer_address;
 CREATE TABLE customer_address (
@@ -31,20 +34,8 @@ CREATE TABLE customer_address (
   address_id INTEGER REFERENCES billing_address ( id )
 );
 
-
-DROP TABLE IF EXISTS billing_address;
-CREATE TABLE billing_address (
-  id SERIAL PRIMARY KEY,
-  street_address VARCHAR ( 255 ),
-  zipcode INTEGER,
-  apartment_number VARCHAR ( 255 ),
-  city VARCHAR ( 255 ),
-  state VARCHAR ( 255 )
-);
-
-
-DROP TABLE IF EXISTS order;
-CREATE TABLE order (
+DROP TABLE IF EXISTS purchase;
+CREATE TABLE purchase (
   id SERIAL PRIMARY KEY,
   customer_id INTEGER REFERENCES customer ( id ),
   completed BOOLEAN,
@@ -61,7 +52,7 @@ CREATE TABLE delivery (
   delivery_address INTEGER REFERENCES customer_address ( id ),
   delivery_person VARCHAR ( 255 ),
   -- consider delivery_person
-  order_id INTEGER REFERENCES order ( id ),
+  purchase_id INTEGER REFERENCES purchase ( id ),
   price DECIMAL,
   tip DECIMAL
 );
@@ -88,10 +79,10 @@ CREATE TABLE drink (
 );
 
 
-DROP TABLE IF EXISTS drink_order;
-CREATE TABLE drink_order (
+DROP TABLE IF EXISTS drink_purchase;
+CREATE TABLE drink_purchase (
   id SERIAL PRIMARY KEY,
-  order_id INTEGER REFERENCES order ( id ),
+  purchase_id INTEGER REFERENCES purchase ( id ),
   drink_id INTEGER REFERENCES drink ( id ),
   quantity INTEGER
 );
@@ -108,10 +99,10 @@ CREATE TABLE pizza (
 );
 
 
-DROP TABLE IF EXISTS pizza_order;
-CREATE TABLE pizza_order (
+DROP TABLE IF EXISTS pizza_purchase;
+CREATE TABLE pizza_purchase (
   id SERIAL PRIMARY KEY,
-  order_id INTEGER REFERENCES order ( id ),
+  purchase_id INTEGER REFERENCES purchase ( id ),
   pizza_id INTEGER REFERENCES pizza ( id ),
   quantity INTEGER
 );
@@ -129,5 +120,5 @@ CREATE TABLE ingredient (
   id SERIAL PRIMARY KEY,
   name VARCHAR ( 255 ),
   price DECIMAL,
-  quantity INTEGER
+  in_stock INTEGER
 );
