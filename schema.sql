@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS credit_card;
 CREATE TABLE credit_card (
   id SERIAL PRIMARY KEY,
   customer_name VARCHAR ( 255 ) NULL,
-  card_number INTEGER NULL,
+  card_number VARCHAR ( 16 ) NULL,
   apartment_number VARCHAR ( 255 ),
   street_address VARCHAR ( 255 ) NULL,
   zipcode INTEGER,

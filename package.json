@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "createdb": "createdb piccadillypizza",
     "createtables": "psql piccadillypizza < schema.sql",
-    "dropdb": "dropdb piccadillypizza"
+    "dropdb": "dropdb piccadillypizza",
+    "insert": "psql piccadillypizza < seed.sql"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
