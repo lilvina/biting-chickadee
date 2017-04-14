@@ -86,7 +86,7 @@ VALUES
 ( 'Sprite', 'Sprite Co', 'Bay Area Beverage Company', 2.99 ),
 ( 'Coke', 'Coke Co', 'Bay Area Beverage Company', 2.99 );
 
-INSERT INTO drink_purchase(
+INSERT INTO drink_purchase (
   purchase_id,
   drink_id,
   quantity
@@ -97,3 +97,23 @@ VALUES
 ( 2, 1, 1),
 ( 3, 3, 2),
 ( 4, 4, 2);
+
+INSERT INTO pizza (
+  name,
+  size,
+  type,
+  price,
+  discount
+)
+VALUES 
+( 'Spinach & Mushroom', 'L', 'thick', 32.80, 0.00 ),
+( 'Spinach & Mushroom', 'XL', 'thin', 30.60, 0.00 ),
+( 'OG Kush', 'L', 'thin', 21.00, 0.00 ),
+( 'White Widow', 'L', 'thin', 27.0, 0.00 ),
+( 'Custom', 'S', 'thin', 15.00, 0.00 ),
+( 'Custom', 'L', 'thick', 16.80, 0.00 ),
+( 'Custom', 'L', 'thin', 15.80, 0.00 ),
+( 'Carne', 'M', 'thick', 29.50, 10.00 ),
+( 'Carne', 'M', 'thin', 22.50, 0.50  ),
+( 'Pizza Blanca', 'S', 'thin', 13.75, 5.00 ),
+( 'Spinach & Mushroom', 'M', 'thick', 27.90, 0.00 );
