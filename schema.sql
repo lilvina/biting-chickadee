@@ -17,21 +17,14 @@ CREATE TABLE credit_card (
   id SERIAL PRIMARY KEY,
   customer_name VARCHAR ( 255 ) NOT NULL,
   card_number VARCHAR ( 16 ) NOT NULL,
-  billing_address VARCHAR ( 255 ) NOT NULL,
-  apartment_number VARCHAR ( 255 ) NULL,
-  zipcode INTEGER NOT NULL,
+  billing_address INTEGER REFERENCES address ( id ) NOT NULL,
+  apartment_number VARCHAR ( 10 ) NULL,
+  zipcode VARCHAR ( 10 ) NOT NULL,
   customer_id INTEGER REFERENCES customer ( id ) NOT NULL,
   expiration_date TIMESTAMP NOT NULL,
   card_type VARCHAR ( 255 ) NOT NULL,
   city VARCHAR ( 255 ) NOT NULL,
   state VARCHAR ( 255 ) NOT NULL
-);
-
-DROP TABLE IF EXISTS customer_address;
-CREATE TABLE customer_address (
-  id SERIAL PRIMARY KEY,
-  customer_id INTEGER REFERENCES customer ( id ) NOT NULL,
-  address_id INTEGER REFERENCES billing_address ( id ) NOT NULL
 );
 
 DROP TABLE IF EXISTS purchase;
@@ -49,7 +42,7 @@ DROP TABLE IF EXISTS delivery;
 CREATE TABLE delivery (
   id SERIAL PRIMARY KEY,
   status VARCHAR ( 255 ) NOT NULL,
-  delivery_address INTEGER REFERENCES customer_address ( id ) NOT NULL,
+  delivery_address INTEGER REFERENCES address ( id ) NOT NULL,
   delivery_person VARCHAR ( 255 ) NOT NULL,
   purchase_id INTEGER REFERENCES purchase ( id ) NOT NULL,
   price DECIMAL NOT NULL,
@@ -61,8 +54,8 @@ DROP TABLE IF EXISTS address;
 CREATE TABLE address (
   id SERIAL PRIMARY KEY,
   street_address VARCHAR ( 255 ) NOT NULL,
-  zipcode INTEGER NOT NULL,
-  apartment_number VARCHAR ( 255 ) NOT NULL,
+  zipcode VARCHAR( 10 ) NOT NULL,
+  apartment_number VARCHAR ( 10 ) NOT NULL,
   city VARCHAR ( 255 ) NOT NULL,
   state VARCHAR ( 255 ) NOT NULL
 );
@@ -121,3 +114,10 @@ CREATE TABLE ingredient (
   price DECIMAL NOT NULL,
   in_stock INTEGER NOT NULL
 );
+
+DROP TABLE IF EXISTS delivery_person;
+CREATE TABLE delivery_person (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR( 255 )
+);
+
