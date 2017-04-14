@@ -44,6 +44,8 @@ Before diving in, it is **strongly recommended** to review the video and code fr
 
 **Product/User Stories**
 
+###The quality specs that are not checked off are not relevant to this project's core specs. There is a PR made to Tanner to remove these specs from the project.
+
 - [x] Can track all **customers** and any relevant customer information, including but not limited to...
   - [x] customer ID
   - [x] name
