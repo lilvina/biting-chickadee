@@ -29,7 +29,8 @@ INSERT INTO credit_card (
   customer_id,
   billing_address,
   expiration_date,
-  card_type )
+  card_type 
+  )
 VALUES
 ( 'Beyoncé Knowles', '4567390482903889', 1, 1, '1999-01-08', 'Mastercard' ),
 ( 'Solange Knowles', '1234567891011121', 2, 2, '1999-01-08', 'Visa' ),
@@ -48,22 +49,27 @@ INSERT INTO purchase (
   completed,
   payment_method,
   date_time,
-  total )
+  total 
+  )
 VALUES
 (11, 'true', 'credit_card', '1999-01-08', 18.99 ),
 (10, 'false', 'cash', '1999-01-08', 21.99 ),
 (7, 'true', 'check', '1999-01-08', 5.99 ),
-(5, 'false', 'debit_card', '1999-01-08', 30.99 )
+(5, 'false', 'debit_card', '1999-01-08', 30.99 );
 
--- INSERT INTO customer_address ( customer_id, address_id )
--- VALUES ( 4, 9 ),
--- ( 6, 8 ),
--- ( 9, 7 ),
--- ( 3, 6 ),
--- ( 1, 5 ),
--- ( 7, 4 ),
--- ( 8, 3 ),
--- ( 11, 2 ),
--- ( 5, 1 ),
--- ( 2, 10 ),
--- ( 10, 11 );
+INSERT INTO delivery (
+  status,
+  delivery_address,
+  delivery_person,
+  purchase_id,
+  price,
+  tip
+)
+-- delivered means order has been completed and customer has food
+-- in_progress means order is still being cooked
+-- done means that the food has been cooked and is on its way to customer
+VALUES
+( 'delivered', 7, 'Bob', 1, 23.99, .20 ),
+( 'in_progress', 8, 'Bob', 2, 26.99, .15 ),
+( 'delivered', 6, 'Tom', 3, 10.99, .10 ),
+( 'done', 1, 'Judy', 4, 35.99, .05 );

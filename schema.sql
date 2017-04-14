@@ -56,8 +56,6 @@ CREATE TABLE delivery (
 );
 
 
-
-
 DROP TABLE IF EXISTS drink;
 CREATE TABLE drink (
   id SERIAL PRIMARY KEY,
