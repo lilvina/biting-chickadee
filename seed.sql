@@ -117,3 +117,16 @@ VALUES
 ( 'Carne', 'M', 'thin', 22.50, 0.50  ),
 ( 'Pizza Blanca', 'S', 'thin', 13.75, 5.00 ),
 ( 'Spinach & Mushroom', 'M', 'thick', 27.90, 0.00 );
+
+INSERT INTO pizza_purchase (
+  purchase_id,
+  pizza_id,
+  quantity
+)
+
+VALUES 
+( 1, 4, 2),
+( 1, 8, 2),
+( 2, 7, 1),
+( 4, 6, 1),
+( 3, 2, 1);
