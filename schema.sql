@@ -27,14 +27,10 @@ CREATE TABLE credit_card (
   id SERIAL PRIMARY KEY,
   customer_name VARCHAR ( 255 ) NOT NULL,
   card_number VARCHAR ( 16 ) NOT NULL,
-  billing_address INTEGER REFERENCES address ( id ) NOT NULL,
-  apartment_number VARCHAR ( 10 ) NULL,
-  zipcode VARCHAR ( 10 ) NOT NULL,
   customer_id INTEGER REFERENCES customer ( id ) NOT NULL,
+  billing_address INTEGER REFERENCES address ( id ) NOT NULL,
   expiration_date TIMESTAMP NOT NULL,
-  card_type VARCHAR ( 255 ) NOT NULL,
-  city VARCHAR ( 255 ) NOT NULL,
-  state VARCHAR ( 255 ) NOT NULL
+  card_type VARCHAR ( 255 ) NOT NULL
 );
 
 DROP TABLE IF EXISTS purchase;
