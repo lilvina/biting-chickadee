@@ -107,7 +107,7 @@ CREATE TABLE ingredient (
 DROP TABLE IF EXISTS pizza_ingredient;
 CREATE TABLE pizza_ingredient (
   pizza_id INTEGER REFERENCES pizza ( id ) NOT NULL,
-  ingredient_id INTEGER REFERENCES customer ( id ) NOT NULL
+  ingredient_id INTEGER REFERENCES ingredient ( id ) NOT NULL
 );
 
 
