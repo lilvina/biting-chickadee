@@ -123,10 +123,42 @@ INSERT INTO pizza_purchase (
   pizza_id,
   quantity
 )
-
 VALUES 
 ( 1, 4, 2),
 ( 1, 8, 2),
 ( 2, 7, 1),
 ( 4, 6, 1),
 ( 3, 2, 1);
+
+INSERT INTO ingredient (
+  name,
+  price,
+  in_stock
+)
+VALUES 
+( 'pepperoni', .50, 500 ),
+( 'swiss cheese', .40, 300 ),
+( 'mozzarella', .50, 100 ),
+( 'cheddar cheese', .10, 90 ),
+( 'mushroom', .50, 500 ),
+( 'ham', .20, 190 ),
+( 'salmon', .20, 350 ),
+( 'capers', .10, 100 ),
+( 'sour cream', .35, 500 ),
+( 'olives', .30, 50 ),
+( 'italian sausage', .10, 200 ),
+( 'onions', .10, 100 ),
+( 'pineapple', .20, 80 ),
+( 'garlic', .10, 90 ),
+( 'cherry pepper', .10, 100 ),
+( 'jalapeno', .20, 50 ),
+( 'spinach', .10, 200 ),
+( 'fresh herb', .30, 200 ),
+( 'ricotta de latte cheese', .10, 90 ),
+( 'fresh lemon', .10, 100 ),
+( 'chopped bacon', .20, 200 ),
+( 'salami', .10, 250 ),
+( 'three cheese', .25, 150 ),
+( 'olive oil', .20, 30 ),
+( 'salami', .10, 100 );
+

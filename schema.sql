@@ -95,13 +95,6 @@ CREATE TABLE pizza_purchase (
 );
 
 
-DROP TABLE IF EXISTS pizza_ingredient;
-CREATE TABLE pizza_ingredient (
-  pizza_id INTEGER REFERENCES pizza ( id ) NOT NULL,
-  ingredient_id INTEGER REFERENCES customer ( id ) NOT NULL
-);
-
-
 DROP TABLE IF EXISTS ingredient;
 CREATE TABLE ingredient (
   id SERIAL PRIMARY KEY,
@@ -109,6 +102,14 @@ CREATE TABLE ingredient (
   price DECIMAL NOT NULL,
   in_stock INTEGER NOT NULL
 );
+
+
+DROP TABLE IF EXISTS pizza_ingredient;
+CREATE TABLE pizza_ingredient (
+  pizza_id INTEGER REFERENCES pizza ( id ) NOT NULL,
+  ingredient_id INTEGER REFERENCES customer ( id ) NOT NULL
+);
+
 
 DROP TABLE IF EXISTS delivery_person;
 CREATE TABLE delivery_person (
