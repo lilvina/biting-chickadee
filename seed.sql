@@ -73,3 +73,15 @@ VALUES
 ( 'in_progress', 8, 'Bob', 2, 26.99, .15 ),
 ( 'delivered', 6, 'Tom', 3, 10.99, .10 ),
 ( 'done', 1, 'Judy', 4, 35.99, .05 );
+
+INSERT INTO drink (
+  description,
+  manufacturer,
+  supplier,
+  price
+)
+VALUES
+( 'Pepsi', 'Pepsi Co', 'Pepsi Beverages Company', 2.99 ),
+( 'Orange Juice', 'Orange Company', 'Orange Company', 1.99 ),
+( 'Sprite', 'Sprite Co', 'Bay Area Beverage Company', 2.99 ),
+( 'Coke', 'Coke Co', 'Bay Area Beverage Company', 2.99 );
