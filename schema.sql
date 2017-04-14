@@ -12,6 +12,16 @@ CREATE TABLE customer (
   phone_number INTEGER NULL
 );
 
+DROP TABLE IF EXISTS address;
+CREATE TABLE address (
+  id SERIAL PRIMARY KEY,
+  street_address VARCHAR ( 255 ) NOT NULL,
+  zipcode VARCHAR( 10 ) NOT NULL,
+  apartment_number VARCHAR ( 10 ) NOT NULL,
+  city VARCHAR ( 255 ) NOT NULL,
+  state VARCHAR ( 255 ) NOT NULL
+);
+
 DROP TABLE IF EXISTS credit_card;
 CREATE TABLE credit_card (
   id SERIAL PRIMARY KEY,
@@ -50,15 +60,6 @@ CREATE TABLE delivery (
 );
 
 
-DROP TABLE IF EXISTS address;
-CREATE TABLE address (
-  id SERIAL PRIMARY KEY,
-  street_address VARCHAR ( 255 ) NOT NULL,
-  zipcode VARCHAR( 10 ) NOT NULL,
-  apartment_number VARCHAR ( 10 ) NOT NULL,
-  city VARCHAR ( 255 ) NOT NULL,
-  state VARCHAR ( 255 ) NOT NULL
-);
 
 
 DROP TABLE IF EXISTS drink;
