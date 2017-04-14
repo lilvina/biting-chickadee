@@ -12,19 +12,25 @@ CREATE TABLE customer (
   phone_number INTEGER NULL
 );
 
+DROP TABLE IF EXISTS address;
+CREATE TABLE address (
+  id SERIAL PRIMARY KEY,
+  street_address VARCHAR ( 255 ) NOT NULL,
+  zipcode VARCHAR( 10 ) NOT NULL,
+  apartment_number VARCHAR ( 10 ) NOT NULL,
+  city VARCHAR ( 255 ) NOT NULL,
+  state VARCHAR ( 255 ) NOT NULL
+);
+
 DROP TABLE IF EXISTS credit_card;
 CREATE TABLE credit_card (
   id SERIAL PRIMARY KEY,
   customer_name VARCHAR ( 255 ) NOT NULL,
   card_number VARCHAR ( 16 ) NOT NULL,
-  billing_address INTEGER REFERENCES address ( id ) NOT NULL,
-  apartment_number VARCHAR ( 10 ) NULL,
-  zipcode VARCHAR ( 10 ) NOT NULL,
   customer_id INTEGER REFERENCES customer ( id ) NOT NULL,
+  billing_address INTEGER REFERENCES address ( id ) NOT NULL,
   expiration_date TIMESTAMP NOT NULL,
-  card_type VARCHAR ( 255 ) NOT NULL,
-  city VARCHAR ( 255 ) NOT NULL,
-  state VARCHAR ( 255 ) NOT NULL
+  card_type VARCHAR ( 255 ) NOT NULL
 );
 
 DROP TABLE IF EXISTS purchase;
@@ -37,27 +43,22 @@ CREATE TABLE purchase (
   total DECIMAL NOT NULL
 );
 
+DROP TABLE IF EXISTS delivery_person;
+CREATE TABLE delivery_person (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR( 255 )
+);
+
 
 DROP TABLE IF EXISTS delivery;
 CREATE TABLE delivery (
   id SERIAL PRIMARY KEY,
   status VARCHAR ( 255 ) NOT NULL,
   delivery_address INTEGER REFERENCES address ( id ) NOT NULL,
-  delivery_person VARCHAR ( 255 ) NOT NULL,
+  delivery_person INTEGER REFERENCES delivery_person ( id ) NOT NULL,
   purchase_id INTEGER REFERENCES purchase ( id ) NOT NULL,
   price DECIMAL NOT NULL,
   tip DECIMAL NULL
-);
-
-
-DROP TABLE IF EXISTS address;
-CREATE TABLE address (
-  id SERIAL PRIMARY KEY,
-  street_address VARCHAR ( 255 ) NOT NULL,
-  zipcode VARCHAR( 10 ) NOT NULL,
-  apartment_number VARCHAR ( 10 ) NOT NULL,
-  city VARCHAR ( 255 ) NOT NULL,
-  state VARCHAR ( 255 ) NOT NULL
 );
 
 
@@ -100,13 +101,6 @@ CREATE TABLE pizza_purchase (
 );
 
 
-DROP TABLE IF EXISTS pizza_ingredient;
-CREATE TABLE pizza_ingredient (
-  pizza_id INTEGER REFERENCES pizza ( id ) NOT NULL,
-  ingredient_id INTEGER REFERENCES customer ( id ) NOT NULL
-);
-
-
 DROP TABLE IF EXISTS ingredient;
 CREATE TABLE ingredient (
   id SERIAL PRIMARY KEY,
@@ -115,9 +109,9 @@ CREATE TABLE ingredient (
   in_stock INTEGER NOT NULL
 );
 
-DROP TABLE IF EXISTS delivery_person;
-CREATE TABLE delivery_person (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR( 255 )
-);
 
+DROP TABLE IF EXISTS pizza_ingredient;
+CREATE TABLE pizza_ingredient (
+  pizza_id INTEGER REFERENCES pizza ( id ) NOT NULL,
+  ingredient_id INTEGER REFERENCES ingredient ( id ) NOT NULL
+);

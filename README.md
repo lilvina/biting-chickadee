@@ -71,15 +71,15 @@ Before diving in, it is **strongly recommended** to review the video and code fr
 - [X] There are commands provided (using `npm run` and/or with executable scripts in a `bin/` directory) to:
   - [X] Create the database
   - [X] Drop the database
-  - [ ] Insert sample/seed data to the database
-  - [ ] Start the web server
-- [ ] SQL files are well formatted and readable.
-- [ ] All the SQL keywords are capitalized.
-- [ ] The E-R diagram minimizes data redundancy.
-- [ ] Table names are singular, not plural.
+  - [X] Insert sample/seed data to the database
+  - [X] Start the web server
+- [X] SQL files are well formatted and readable.
+- [X] All the SQL keywords are capitalized.
+- [X] The E-R diagram minimizes data redundancy.
+- [X] Table names are singular, not plural.
 - [ ] Variables, functions, files, etc. have appropriate and meaningful names.
 - [ ] Functions are small and serve a single purpose.
-- [ ] Code is well organized into a meaningful file structure.
+- [X] Code is well organized into a meaningful file structure.
 - [ ] Code is reasonably tested with a test suite.
 - [X] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
 
