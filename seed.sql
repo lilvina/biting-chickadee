@@ -43,14 +43,17 @@ VALUES
 ( 'Malia Obama', '4567390482902100', 10, 7, '1999-01-08', 'Mastercard'),
 ( 'Sasha Obama', '456739048290001', 11, 8, '1999-01-08', 'Visa');
 
--- INSERT INTO purchase ( 
---   customer_id,
---   completed,
---   payment_method,
---   date_time,
---   total )
--- VALUES
--- (1, 'false', )
+INSERT INTO purchase ( 
+  customer_id,
+  completed,
+  payment_method,
+  date_time,
+  total )
+VALUES
+(11, 'true', 'credit_card', '1999-01-08', 18.99 ),
+(10, 'false', 'cash', '1999-01-08', 21.99 ),
+(7, 'true', 'check', '1999-01-08', 5.99 ),
+(5, 'false', 'debit_card', '1999-01-08', 30.99 )
 
 -- INSERT INTO customer_address ( customer_id, address_id )
 -- VALUES ( 4, 9 ),
