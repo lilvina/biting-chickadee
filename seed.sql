@@ -85,3 +85,15 @@ VALUES
 ( 'Orange Juice', 'Orange Company', 'Orange Company', 1.99 ),
 ( 'Sprite', 'Sprite Co', 'Bay Area Beverage Company', 2.99 ),
 ( 'Coke', 'Coke Co', 'Bay Area Beverage Company', 2.99 );
+
+INSERT INTO drink_purchase(
+  purchase_id,
+  drink_id,
+  quantity
+)
+VALUES
+( 1, 2, 4),
+( 1, 3, 2),
+( 2, 1, 1),
+( 3, 3, 2),
+( 4, 4, 2);
