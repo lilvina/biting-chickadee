@@ -68,7 +68,7 @@ Before diving in, it is **strongly recommended** to review the video and code fr
 
 **Other**
 - [X] The artifact is a GitHub repo
-- [ ] There are commands provided (using `npm run` and/or with executable scripts in a `bin/` directory) to:
+- [X] There are commands provided (using `npm run` and/or with executable scripts in a `bin/` directory) to:
   - [X] Create the database
   - [X] Drop the database
   - [ ] Insert sample/seed data to the database
@@ -81,7 +81,7 @@ Before diving in, it is **strongly recommended** to review the video and code fr
 - [ ] Functions are small and serve a single purpose.
 - [ ] Code is well organized into a meaningful file structure.
 - [ ] Code is reasonably tested with a test suite.
-- [ ] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
+- [X] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
 
 HINT: if you see an item in bold, you may want to consider creating a table for that item. :)
 
