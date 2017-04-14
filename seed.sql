@@ -57,6 +57,14 @@ VALUES
 (7, 'true', 'check', '1999-01-08', 5.99 ),
 (5, 'false', 'debit_card', '1999-01-08', 30.99 );
 
+INSERT INTO delivery_person (
+  name
+)
+VALUES 
+( 'Bob' ),
+( 'Tom' ),
+( 'Judy' );
+
 INSERT INTO delivery (
   status,
   delivery_address,
@@ -69,10 +77,10 @@ INSERT INTO delivery (
 -- in_progress means order is still being cooked
 -- done means that the food has been cooked and is on its way to customer
 VALUES
-( 'delivered', 7, 'Bob', 1, 23.99, .20 ),
-( 'in_progress', 8, 'Bob', 2, 26.99, .15 ),
-( 'delivered', 6, 'Tom', 3, 10.99, .10 ),
-( 'done', 1, 'Judy', 4, 35.99, .05 );
+( 'delivered', 7, 1, 1, 23.99, .20 ),
+( 'in_progress', 8, 1, 2, 26.99, .15 ),
+( 'delivered', 6, 2, 3, 10.99, .10 ),
+( 'done', 1, 3, 4, 35.99, .05 );
 
 INSERT INTO drink (
   description,
@@ -163,8 +171,8 @@ VALUES
 ( 'salami', .10, 100 );
 
 INSERT INTO pizza_ingredient (
-  pizza_id, --pizza id
-  ingredient_id -- ingredient id
+  pizza_id,
+  ingredient_id
 )
 VALUES
 ( 1, 17 ),
@@ -217,4 +225,3 @@ VALUES
 ( 10, 24 ),
 ( 10, 19 ),
 ( 10, 20 );
-

@@ -43,13 +43,19 @@ CREATE TABLE purchase (
   total DECIMAL NOT NULL
 );
 
+DROP TABLE IF EXISTS delivery_person;
+CREATE TABLE delivery_person (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR( 255 )
+);
+
 
 DROP TABLE IF EXISTS delivery;
 CREATE TABLE delivery (
   id SERIAL PRIMARY KEY,
   status VARCHAR ( 255 ) NOT NULL,
   delivery_address INTEGER REFERENCES address ( id ) NOT NULL,
-  delivery_person VARCHAR ( 255 ) NOT NULL,
+  delivery_person INTEGER REFERENCES delivery_person ( id ) NOT NULL,
   purchase_id INTEGER REFERENCES purchase ( id ) NOT NULL,
   price DECIMAL NOT NULL,
   tip DECIMAL NULL
@@ -109,11 +115,3 @@ CREATE TABLE pizza_ingredient (
   pizza_id INTEGER REFERENCES pizza ( id ) NOT NULL,
   ingredient_id INTEGER REFERENCES ingredient ( id ) NOT NULL
 );
-
-
-DROP TABLE IF EXISTS delivery_person;
-CREATE TABLE delivery_person (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR( 255 )
-);
-
